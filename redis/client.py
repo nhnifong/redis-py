@@ -1073,6 +1073,10 @@ class StrictRedis(object):
         "Increment the value of ``key`` in hash ``name`` by ``amount``"
         return self.execute_command('HINCRBY', name, key, amount)
 
+    def hincrbyfloat(self, name, key, amount=1.0):
+        "Increment the value of ``key`` in hash ``name`` by ``amount``, but for floats!"
+        return self.execute_command('HINCRBYFLOAT', name, key, amount)
+
     def hkeys(self, name):
         "Return the list of keys within hash ``name``"
         return self.execute_command('HKEYS', name)
